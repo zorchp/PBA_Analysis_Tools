@@ -1,4 +1,4 @@
-#include "loader.h"
+#include "../inc/loader.h"
 
 namespace loader {
 
@@ -558,7 +558,7 @@ namespace loader {
 
         for (bfd_sec = bfd_h->sections; bfd_sec; bfd_sec = bfd_sec->next)
         {
-            bfd_flags = bfd_get_section_flags(bfd_h, bfd_sec);
+            bfd_flags = bfd_section_flags(bfd_sec);
 
             sectype = Section::SEC_TYPE_NONE;
             if (bfd_flags & SEC_CODE)
@@ -568,9 +568,9 @@ namespace loader {
             else
                 continue;
 
-            vma     = bfd_section_vma(bfd_h, bfd_sec);
-            size    = bfd_section_size(bfd_h, bfd_sec);
-            secname = bfd_section_name(bfd_h, bfd_sec);
+            vma     = bfd_section_vma(bfd_sec);
+            size    = bfd_section_size(bfd_sec);
+            secname = bfd_section_name(bfd_sec);
             if (!secname)
                 secname = "<unnamed>";
 

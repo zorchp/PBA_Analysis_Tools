@@ -1,0 +1,18 @@
+---
+BasedOnStyle: Google
+IndentWidth: 4
+SortIncludes: false
+AccessModifierOffset: -4
+ContinuationIndentWidth: 4
+AlignAfterOpenBracket: true
+AlignConsecutiveDeclarations: true
+AlignOperands: true
+AlignTrailingComments: true
+MaxEmptyLinesToKeep: 2
+SpacesBeforeTrailingComments: 1
+KeepEmptyLinesAtTheStartOfBlocks: true
+# AllowShortBlocksOnASingleLine: false
+# AllowShortFunctionsOnASingleLine: false
+# AllowShortIfStatementsOnASingleLine: false
+# AllowShortLoopsOnASingleLine: false
+# AllowShortCaseLabelsOnASingleLine: false

@@ -3,7 +3,7 @@ MYLIBS=-I./inc/
 LDFLAGS=-lbfd -lcapstone
 CXXFLAGS=-std=c++14 -g -Wall
 
-SRC=./src/
+SRC=./inc/
 TEST=./tester/
 
 .PHONY: all clean setup
