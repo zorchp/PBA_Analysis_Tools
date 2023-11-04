@@ -4,6 +4,7 @@
 #include <string>
 #include <capstone/capstone.h>
 #include "inc/loader.h"
+
 int      disasm(loader::Binary *bin);
 void     print_ins(cs_insn *ins);
 bool     is_cs_cflow_group(uint8_t g);

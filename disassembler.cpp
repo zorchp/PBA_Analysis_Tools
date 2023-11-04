@@ -1,4 +1,4 @@
-#include "disassembler.h"
+#include "inc/disassembler.h"
 
 bool compareByAddress(const cs_insn *a,const cs_insn *b)
 {
