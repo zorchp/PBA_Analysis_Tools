@@ -1,31 +1,20 @@
-CXX=g++
-MYLIBS=-I./inc/ 
-LDFLAGS=-lbfd -lcapstone
-CXXFLAGS=-std=c++14 -g -Wall
+CC = g++
+CFLAGS = -Wall -Wextra -std=c++14
+LDFLAGS = -lcapstone -lbfd
 
-SRC=./inc/
-TEST=./tester/
+SOURCES = loader/loader.cpp capstone_gadget_finder.cpp
+OBJECTS = $(SOURCES:.cpp=.o)
+EXECUTABLE = capstone_gadget_finder.out
 
-.PHONY: all clean setup
+all: $(EXECUTABLE)
 
-all: $(TEST)tester
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) $(CFLAGS) $(OBJECTS) -o $@ $(LDFLAGS)
 
-$(TEST)tester: $(TEST)tester.o $(SRC)loader.o $(SRC)disassembler.o
-	$(CXX) $(MYLIBS) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
-
-$(TEST)tester.o: $(TEST)tester.cpp
-	$(CXX) -c $(MYLIBS) $(CXXFLAGS) -o $@ $< $(LDFLAGS)
-
-$(SRC)loader.o: $(SRC)loader.cpp
-	$(CXX) -c $(MYLIBS) $(CXXFLAGS) -o $@ $< $(LDFLAGS)
-
-$(SRC)disassembler.o: $(SRC)disassembler.cpp
-	$(CXX) -c $(MYLIBS) $(CXXFLAGS) -o $@ $< $(LDFLAGS)
-
-setup:
-	sudo apt install binutils-multiarch-dev libcapstone-dev
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm $(TEST)tester
-	rm $(TEST)*.o
-	rm $(SRC)*.o
+	rm -f $(EXECUTABLE) $(OBJECTS)
+
+.PHONY: all clean
