@@ -4,9 +4,9 @@
 #include <iostream>
 #include <memory> // for smart pointers
 #include <capstone/capstone.h>
-#include "../inc/loader.h"
-#include "../inc/disassembler.h"
-#include "../inc/error.h"
+#include "loader.h"
+#include "disassembler.h"
+#include "error.h"
 
 int main (int argc, char **argv)
 {

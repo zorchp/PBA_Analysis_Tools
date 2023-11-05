@@ -3,6 +3,7 @@
 #define UNPACKER_H
 
 #include "pin.H"
+#include <map>
 
 /***
  *  Structure to track memory activity 

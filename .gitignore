@@ -35,5 +35,6 @@
 .vscode/
 
 # cmake
+bin/
 .cache/
 build/
