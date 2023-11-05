@@ -15,14 +15,14 @@ include_directories(
 	${PROJECT_SOURCE_DIR}/include/
 	/opt/pin/source/include/pin/
 	/opt/pin/extras/xed-intel64/include/xed/
-	/opt/pin/extras/crt/include/
+	# /opt/pin/extras/crt/include/
 )
 
 # 添加链接库
 target_link_libraries(pin_profiles bfd capstone)
 
 # 设置编译选项
-add_compile_definitions(TARGET=ia32)
+# add_compile_definitions(TARGET=ia32)
 add_compile_options(-Wall -Wextra)
 
 # 设置输出路径
